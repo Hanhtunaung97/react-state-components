@@ -31,7 +31,7 @@ const Accordion = ({id,question,answer}) => {
       </div>
       {notOpen && (
         <div
-          className={` bg-violet-100 border border-violet-300 p-3 text-violet-900 animate__animated animate__bounceIn`}
+          className={` bg-violet-50 border border-violet-300 p-3 text-violet-500 animate__animated animate__bounceIn`}
         >
           <p>
             {answer}
