@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 
-const Accordion = ({id,question,answer}) => {
-  const [notOpen, setOpen] = useState(false);
-  const accordionHandler = () => {
-    setOpen(!notOpen);
-  };
+const Accordion = ({id,question,answer,isOpen,openAccordion}) => {
+  // const [notOpen, setOpen] = useState(false);
+  // const accordionHandler = () => {
+  //   setOpen(!notOpen);
+  // };
+  // const handleAccordion=() => {
+  //   openAccordion(id);
+  // }
   return (
     <div>
       <div
-        onClick={accordionHandler}
+      onClick={() => {
+        openAccordion(id)
+      }}
         className=" flex justify-between items-center bg-violet-50 p-2 rounded border-2 border-violet-300 select-none cursor-pointer"
       >
         <h1 className=" text-xl font-mono font-semibold text-violet-600">
@@ -20,7 +25,7 @@ const Accordion = ({id,question,answer}) => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className={`w-4 h-4 stroke-2 stroke-violet-800 duration-200 ${notOpen && 'rotate-180'}`}
+          className={`w-4 h-4 stroke-2 stroke-violet-800 duration-200 ${isOpen && 'rotate-180'}`}
         >
           <path
             strokeLinecap="round"
@@ -29,7 +34,7 @@ const Accordion = ({id,question,answer}) => {
           />
         </svg>
       </div>
-      {notOpen && (
+      {isOpen && (
         <div
           className={` bg-violet-50 border border-violet-300 p-3 text-violet-500 animate__animated animate__bounceIn`}
         >
